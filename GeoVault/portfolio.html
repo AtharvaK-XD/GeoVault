@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | GeoVault</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Elements -->
+    <div id="globeViz" class="globe-bg"></div>
+    <div id="starfield"></div>
+    <div id="scanlines"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="neon-text">GEO</span>VAULT
+        </div>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+            <a href="index.html" class="nav-link">Marketplace</a>
+            <a href="portfolio.html" class="nav-link" style="color: var(--neon-cyan); text-shadow: 0 0 5px var(--neon-cyan);">Portfolio</a>
+            <a href="about.html" class="nav-link">About</a>
+        </div>
+
+        <button class="cart-btn" id="open-cart-btn">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="marketplace">
+        <header class="hero" style="min-height: auto; padding-top: 2rem; padding-bottom: 2rem;">
+            <div class="hero-content" style="max-width: 100%;">
+                <h1 class="neon-text">YOUR PORTFOLIO</h1>
+                <p>Nations currently held under your sovereign control. Watch your empire grow.</p>
+            </div>
+        </header>
+
+        <!-- Product Grid -->
+        <section class="country-grid" id="portfolio-grid">
+            <!-- Dynamically populated by JS below -->
+        </section>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-modal">
+            <div class="cart-header">
+                <h2>Your Acquisition Cart</h2>
+                <button class="close-btn" id="close-cart-btn">&times;</button>
+            </div>
+            <div class="cart-body" id="cart-items">
+                <div class="empty-cart">No assets selected.</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">Total: $<span id="cart-total-price">0</span></div>
+                <button class="checkout-btn">Initiate Transfer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/three"></script>
+    <script src="https://unpkg.com/globe.gl"></script>
+
+    <!-- App Data and Logic -->
+    <script src="data.js"></script>
+    <script src="globe.js"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const portGrid = document.getElementById('portfolio-grid');
+            if(!portGrid) return;
+
+            let myCart = JSON.parse(localStorage.getItem('geovault_cart')) || [];
+            if(myCart.length === 0) {
+                portGrid.innerHTML = '<div class="glass-panel" style="padding: 2rem; border-radius: 8px; grid-column: 1 / -1;"><h3>No acquisitions yet. Head to the <a href="index.html" class="neon-text">Marketplace</a> to start building your empire.</h3></div>';
+                return;
+            }
+
+            myCart.forEach((country, index) => {
+                const card = document.createElement('div');
+                card.className = 'country-card show';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <div class="card-title-group">
+                            <span class="flag">${country.flag}</span>
+                            <span class="country-name">${country.name}</span>
+                        </div>
+                    </div>
+                    <div class="card-stats">
+                        <div class="stat-row"><span class="stat-name">Capital:</span> <span>${country.capital}</span></div>
+                        <div class="stat-row"><span class="stat-name">Population:</span> <span>${country.population}</span></div>
+                        <div class="stat-row"><span class="stat-name">GDP:</span> <span>${country.gdp}</span></div>
+                        <div class="stat-row"><span class="stat-name">Area:</span> <span>${country.area}</span></div>
+                    </div>
+                `;
+                portGrid.appendChild(card);
+            });
+        });
+    </script>
+</body>
+</html>

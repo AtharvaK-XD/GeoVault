@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoVault | Own The World</title>
+    <meta name="description" content="GeoVault is a futuristic marketplace where you can own and trade countries. Explore global statistics and add entire nations to your portfolio.">
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Elements -->
+    <div id="globeViz" class="globe-bg"></div>
+    <div id="starfield"></div>
+    <div id="scanlines"></div>
+
+    <!-- Ticker Tape -->
+    <div class="ticker-wrap">
+        <div class="ticker-tape" id="ticker-tape">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="neon-text">GEO</span>VAULT
+        </div>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+            <a href="index.html" class="nav-link">Marketplace</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="about.html" class="nav-link">About</a>
+        </div>
+
+        <button class="cart-btn" id="open-cart-btn">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="OWN THE WORLD">OWN THE WORLD</h1>
+            <p>The premier orbital marketplace for sovereign acquisitions.</p>
+            
+            <!-- Global Stats (Animated on scroll/load) -->
+            <div class="hero-stats">
+                <div class="stat-box">
+                    <div class="stat-label">Available Assets</div>
+                    <div class="stat-value counter" data-target="30">0</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-label">Total Market Cap</div>
+                    <div class="stat-value">$<span class="counter" data-target="104">0</span>T</div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Main Content -->
+    <main class="marketplace">
+        
+        <!-- Controls -->
+        <section class="controls">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search nations by name..." autocomplete="off">
+            </div>
+            
+            <div class="filter-group" id="filter-group">
+                <button class="filter-btn active" data-filter="All">All</button>
+                <button class="filter-btn" data-filter="Asia">Asia</button>
+                <button class="filter-btn" data-filter="Europe">Europe</button>
+                <button class="filter-btn" data-filter="Africa">Africa</button>
+                <button class="filter-btn" data-filter="Americas">Americas</button>
+                <button class="filter-btn" data-filter="Oceania">Oceania</button>
+            </div>
+        </section>
+
+        <!-- Product Grid -->
+        <section class="country-grid" id="country-grid">
+            <!-- Dynamically populated by JS -->
+        </section>
+
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-modal">
+            <div class="cart-header">
+                <h2>Your Acquisition Cart</h2>
+                <button class="close-btn" id="close-cart-btn">&times;</button>
+            </div>
+            <div class="cart-body" id="cart-items">
+                <div class="empty-cart">No assets selected.</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">Total: $<span id="cart-total-price">0</span></div>
+                <button class="checkout-btn">Initiate Transfer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/three"></script>
+    <script src="https://unpkg.com/globe.gl"></script>
+
+    <!-- App Data and Logic -->
+    <script src="data.js"></script>
+    <script src="globe.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

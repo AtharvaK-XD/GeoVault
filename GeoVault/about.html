@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | GeoVault</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .about-content {
+            background: var(--bg-panel);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--neon-cyan-dim);
+            padding: 3rem;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+            pointer-events: auto;
+        }
+        .about-content h2 {
+            color: var(--neon-cyan);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .about-content p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+        .about-content ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        .about-content li {
+            margin-bottom: 0.5rem;
+            border-left: 2px solid var(--neon-gold);
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Elements -->
+    <div id="globeViz" class="globe-bg"></div>
+    <div id="starfield"></div>
+    <div id="scanlines"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="neon-text">GEO</span>VAULT
+        </div>
+        
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="nav-menu" id="nav-menu">
+            <a href="index.html" class="nav-link">Marketplace</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="about.html" class="nav-link" style="color: var(--neon-cyan); text-shadow: 0 0 5px var(--neon-cyan);">About</a>
+        </div>
+
+        <button class="cart-btn" id="open-cart-btn">
+            🛒 Cart (<span id="cart-count">0</span>)
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="marketplace">
+        <header class="hero" style="min-height: auto; padding-top: 2rem; padding-bottom: 2rem;">
+            <div class="hero-content" style="max-width: 100%; text-align: center;">
+                <h1 class="neon-text">SYSTEM ORIGINS</h1>
+                <p>Learn about the premier orbital marketplace for sovereign acquisitions.</p>
+            </div>
+        </header>
+
+        <section class="about-container">
+            <div class="about-content">
+                <h2>The Vision</h2>
+                <p>In the late 21st century, ownership transcended borders. Welcome to <strong>GeoVault</strong> — an elite, invite-only sovereign acquisition protocol operating from low-orbit servers.</p>
+                
+                <h2>How It Works</h2>
+                <p>The GeoVault protocol allows ultra-high-net-worth entities to legally reserve and acquire planetary landmasses. We handle all global treaties, GDP tokenization, and sovereign restructuring.</p>
+                <ul>
+                    <li>Browse available countries mapped to the WebGL holographic matrix.</li>
+                    <li>Verify real-life topological tracking to inspect mountain ranges and oceans.</li>
+                    <li>Acquire nations instantly through our blockchain vault mechanism.</li>
+                </ul>
+
+                <h2>System Infrastructure</h2>
+                <p>The rotating celestial globe in the background isn't just an image. It's a live 3D topological tracker fed by topographical data to visualize current atmospheric scattering and cloud layers across the territories.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-modal">
+            <div class="cart-header">
+                <h2>Your Acquisition Cart</h2>
+                <button class="close-btn" id="close-cart-btn">&times;</button>
+            </div>
+            <div class="cart-body" id="cart-items">
+                <div class="empty-cart">No assets selected.</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">Total: $<span id="cart-total-price">0</span></div>
+                <button class="checkout-btn">Initiate Transfer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- External Libraries -->
+    <script src="https://unpkg.com/three"></script>
+    <script src="https://unpkg.com/globe.gl"></script>
+
+    <!-- App Data and Logic -->
+    <script src="data.js"></script>
+    <script src="globe.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
