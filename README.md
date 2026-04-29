@@ -30,4 +30,4 @@ PageDescription/Marketplace — browse available countries/portfolioView your ac
 GeoVault is a fictional concept project. No countries are actually for sale. This is purely a creative and technical portfolio piece.
 
 📄 License
-This project is open for inspiration. Feel free to explore the code and build on the idea.
+This project is open/free for inspiration to everyone. Feel free to explore the code and build on the idea.
