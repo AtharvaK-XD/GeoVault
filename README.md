@@ -4,8 +4,7 @@ The premier orbital marketplace for sovereign acquisitions.
 
 GeoVault is a fictional, futuristic web app where users can "buy" entire countries like an online store. Built with a sleek sci-fi aesthetic, an interactive 3D globe, and a full cart system — it's a creative front-end project that pushes the limits of modern web design.
 
-🚀 Live Demo
-👉 geovault.netlify.app
+🚀 Live Demo https://geovault.netlify.app/
 
 ✨ Features
 
