@@ -156,13 +156,3 @@ git push origin feature/your-feature-name
 GeoVault is a **fictional concept project**. No countries are actually for sale. This is purely a creative and technical portfolio piece built to demonstrate front-end skills.
 
 ---
-
-## 📄 License
-
-Open and free for inspiration. Feel free to explore, fork, and build on the idea.
-
----
-
-<div align="center">
-  <p>Built with ☕ and orbital ambition by <a href="https://github.com/AtharvaK-XD">@AtharvaK-XD</a></p>
-</div>
