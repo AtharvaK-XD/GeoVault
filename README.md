@@ -154,5 +154,3 @@ git push origin feature/your-feature-name
 ## 📌 Disclaimer
 
 GeoVault is a **fictional concept project**. No countries are actually for sale. This is purely a creative and technical portfolio piece built to demonstrate front-end skills.
-
----
