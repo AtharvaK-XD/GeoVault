@@ -148,9 +148,3 @@ git push origin feature/your-feature-name
 
 # Open a Pull Request on GitHub
 ```
-
----
-
-## 📌 Disclaimer
-
-GeoVault is a **fictional concept project**. No countries are actually for sale. This is purely a creative and technical portfolio piece built to demonstrate front-end skills.
